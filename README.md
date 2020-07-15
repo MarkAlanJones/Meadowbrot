@@ -61,6 +61,14 @@ My desktop machine generates 240x240 images in 0.076s (VB) and 0.059s (C#) (in d
 
 That clocks the Meadow at 150X slower than a i5 (Granted there is alot of double precision floating point math) 
 
+### Update 3.12 
+ C#      | VB      | F#    |
+|--- |---| ---|
+|C# Compute **10.756s**   | VB Compute **39.558s** | F# Compute **300.190000 s** |
+| C# allocated 7,848 bytes  | VB allocated 7,864 bytes  | F# allocated 23,075,240 bytes  |
+| 22% slower than 3.11  | 17.6% slower than 3.11 | 31% slower than 3.11 |
+
+Cross the board slowdown - F# is allocating lots of memory! 
 
 # Use standard wiring for Meadow F7 and LCD
 ![Meadow Frizing](/Meadowbrot/st7789_fritzing.jpg)
