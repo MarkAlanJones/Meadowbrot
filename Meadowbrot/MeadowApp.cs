@@ -42,6 +42,7 @@ namespace Meadowbrot
         byte[][] data;
         byte[] fdata;
         Color displayColor;
+        int loop = 1;
 
         public MeadowApp()
         {
@@ -51,23 +52,34 @@ namespace Meadowbrot
             // Timing is output to the console - The timing does not include the time to load the dlls.
             while (true)
             {
+                Console.WriteLine("--------------------------------------------------------------------------");
+                Console.WriteLine($"{loop++}) {DateTime.Now:T}");
+
+                var totmem = GC.GetAllocatedBytesForCurrentThread(); // running total of memory used, without counting freed memory
                 displayColor = Color.CornflowerBlue;
                 graphics.DrawBigCenteredText("C#", displayColor);
                 data = MandelbrotC.Generate(displayWidth);
                 Draw(data);
+                Console.WriteLine($"C# allocated {GC.GetAllocatedBytesForCurrentThread() - totmem:N0} bytes ");
                 Thread.Sleep(5000);
 
+                totmem = GC.GetAllocatedBytesForCurrentThread();
                 displayColor = Color.Firebrick;
                 graphics.DrawBigCenteredText("VB", displayColor);
                 data = MandelbrotVB.Meadowbrot.MandelbrotVB.Generate(displayWidth);
                 Draw(data);
+                Console.WriteLine($"VB allocated {GC.GetAllocatedBytesForCurrentThread() - totmem:N0} bytes ");
                 Thread.Sleep(5000);
 
+                totmem = GC.GetAllocatedBytesForCurrentThread();
                 displayColor = Color.ForestGreen;
                 graphics.DrawBigCenteredText("F#", displayColor);
                 fdata = MandelbrotFSharp.Generate(displayWidth);
                 Draw(fdata);
+                Console.WriteLine($"F# allocated {GC.GetAllocatedBytesForCurrentThread() - totmem:N0} bytes ");
                 Thread.Sleep(5000);
+
+                Console.WriteLine($"Total inuse memory {GC.GetTotalMemory(false):N0} bytes ");
             }
         }
 
