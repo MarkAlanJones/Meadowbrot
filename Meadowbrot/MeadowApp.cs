@@ -1,7 +1,7 @@
 ﻿using Meadow;
 using Meadow.Devices;
 using Meadow.Foundation;
-using Meadow.Foundation.Displays.Tft;
+using Meadow.Foundation.Displays.TftSpi;
 using Meadow.Foundation.Graphics;
 using Meadow.Foundation.MyExtensions;
 using Meadow.Hardware;
@@ -96,7 +96,7 @@ namespace Meadowbrot
                 chipSelectPin: null,
                 dcPin: Device.Pins.D01,
                 resetPin: Device.Pins.D00,
-                width: (uint)displayWidth, height: (uint)displayHeight);
+                width: displayWidth, height: displayHeight);
 
             // extended graphics library
             graphics = new GraphicsLibraryEx(display);

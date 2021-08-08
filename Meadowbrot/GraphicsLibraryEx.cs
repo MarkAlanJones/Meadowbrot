@@ -35,7 +35,8 @@ namespace Meadow.Foundation.MyExtensions
                 // reverse bits in byte 
                 bitmap[b] = Reverse(bitmap[b]);
             }
-            base.DrawBitmap(x, y, width, height, bitmap, color, scaleFactor);
+
+            base.DrawBitmap(x, y, width * 8, height, bitmap, color, scaleFactor);
         }
 
         // Reverses bits in a byte
