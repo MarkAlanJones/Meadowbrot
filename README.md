@@ -19,7 +19,7 @@ I left the C# inside the main executable for this reason.
 Timings are written to the console by each language. F# uses printfn for this.
 F# in particular includes a large runtime, that is slow to deploy the first time.
 
-Here are the deployed project files:
+Here are the deployed project files (3.11 deployment):
 -  Deploying to Meadow on COM4...
 -  Initializing Meadow                                                                                                     
 -  Device  MeadowOS Version: 0.3.11 (May 22 2020 21:40:16)                                                                
@@ -59,7 +59,7 @@ The F# bitmap displays a little bit faster because it is a single bitmap, instea
 
 My desktop machine generates 240x240 images in 0.076s (VB) and 0.059s (C#) (in debug mode) 
 
-That clocks the Meadow at 150X slower than a i5 (Granted there is alot of double precision floating point math) 
+That clocks the Meadow at 150X slower than an i5 (Granted there is alot of double precision floating point math) 
 
 ### Update 3.12 
  C#      | VB      | F#    |
@@ -69,6 +69,18 @@ That clocks the Meadow at 150X slower than a i5 (Granted there is alot of double
 | 22% slower than 3.11  | 17.6% slower than 3.11 | 31% slower than 3.11 |
 
 Cross the board slowdown - F# is allocating lots of memory! 
+
+### Update 5.2 (.net standard 2.1)
+ C#      | VB      | F#    |
+|--- |---| ---|
+|C# Compute **10.916s**   | VB Compute **28.076s** | F# Compute **178.096 s** |
+| C# allocated 1,166,120 bytes  | VB allocated 1,169,592 bytes  | F# allocated 24,232,768 bytes  |
+| 1.5% slower than 3.12  | 29.0% faster than 3.12 | 40.6% faster than 3.12 |
+
+F# deploy has been broken for a few versions, but is working again now.
+F# is till slowest, but it deploys and runs now, and is much faster that it used to be. VB improved, but still lags behind C#.
+Many extraneous files could be deleted converting to .net standard.
+There is more memory allocated across the board, but perhaps the library is taking more things into consideration.
 
 # Use standard wiring for Meadow F7 and LCD
 ![Meadow Frizing](/Meadowbrot/st7789_fritzing.jpg)
