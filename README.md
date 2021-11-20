@@ -90,7 +90,7 @@ There is more memory allocated across the board, but perhaps the library is taki
 ### Update 6.0 (.net standard 2.1)
  C#      | VB      | F#    |
 |--- |---| ---|
-|C# Compute **11.278s**   | VB Compute **33.883s** | F# Compute **197.781 s** |
+|C# Compute **11.278 s**   | VB Compute **33.883 s** | F# Compute **197.781 s** |
 | C# allocated 8,320 bytes  | VB allocated 8,344 bytes  | F# allocated 23,075,832 bytes  |
 |  Draw took 1.712s  |   Draw took 1.763s |  Draw Took 1.690s |
 | 3.3% slower than 5.2  | 20.7% slower than 5.2 | 11.1% slower than 5.2 |
