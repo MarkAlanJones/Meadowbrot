@@ -96,12 +96,17 @@ namespace Meadowbrot
                 chipSelectPin: null,
                 dcPin: Device.Pins.D01,
                 resetPin: Device.Pins.D00,
-                width: displayWidth, height: displayHeight);
+                width: displayWidth, height: displayHeight)
+            {
+                IgnoreOutOfBoundsPixels = true
+            };
 
             // extended graphics library
-            graphics = new GraphicsLibraryEx(display);
-            graphics.Rotation = GraphicsLibrary.RotationType._270Degrees;
-            graphics.CurrentFont = new Font12x20();
+            graphics = new GraphicsLibraryEx(display)
+            {
+                Rotation = RotationType._270Degrees,
+                CurrentFont = new Font12x20()
+            };
 
             graphics.Clear(true);
         }
