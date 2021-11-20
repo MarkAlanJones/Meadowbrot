@@ -48,7 +48,7 @@ And now for the rather disappointing results...
  C#      | VB      | F#    |
 |--- |---| ---|
 |  1 threads         |  1 threads  | F# start 240 x 240 |
-|C# Compute **8.838s**   | VB Compute **33.634s** | F# Compute **228.503000s** |
+|C# Compute **8.838 s**   | VB Compute **33.634 s** | F# Compute **228.503 s** |
 |  Drawing 240x240...| Drawing 248x240...|   Drawing 240x240... |
 |  Draw took 2.058s  |   Draw took 2.015s |  Draw Took 1.983s |
 |  1X           | 3.8X slower | 25.9X slower |
@@ -64,7 +64,7 @@ That clocks the Meadow at 150X slower than an i5 (Granted there is alot of doubl
 ### Update 3.12 
  C#      | VB      | F#    |
 |--- |---| ---|
-|C# Compute **10.756s**   | VB Compute **39.558s** | F# Compute **300.190000s** |
+|C# Compute **10.756 s**   | VB Compute **39.558 s** | F# Compute **300.190 s** |
 | C# allocated 7,848 bytes  | VB allocated 7,864 bytes  | F# allocated 23,075,240 bytes  |
 | 22% slower than 3.11  | 17.6% slower than 3.11 | 31% slower than 3.11 |
 
@@ -73,19 +73,34 @@ Cross the board slowdown - F# is allocating lots of memory!
 ### Update 5.2 (.net standard 2.1)
  C#      | VB      | F#    |
 |--- |---| ---|
-|C# Compute **10.916s**   | VB Compute **28.076s** | F# Compute **178.096 s** |
+|C# Compute **10.916 s**   | VB Compute **28.076 s** | F# Compute **178.096 s** |
 | C# allocated 1,166,120 bytes  | VB allocated 1,169,592 bytes  | F# allocated 24,232,768 bytes  |
 |  Draw took 4.438s  |   Draw took 4.467s |  Draw Took 4.424s |
 | 1.5% slower than 3.12  | 29.0% faster than 3.12 | 40.6% faster than 3.12 |
 
 F# deploy has been broken for a few versions, but is working again now.
 
-F# is till slowest, but it deploys and runs now, and is much faster that it used to be. VB improved, but still lags behind C#.
-Many extraneous files could be deleted converting to .net standard.
+F# is still slowest, but it deploys and runs now, and is much faster that it used to be. VB improved, but still lags behind C#.
+Many extraneous files were deleted converting to .net standard.
 
 Drawing the bitmaps is more than twice as slow as it was with 3.11.
 
 There is more memory allocated across the board, but perhaps the library is taking more things into consideration.
+
+### Update 6.0 (.net standard 2.1)
+ C#      | VB      | F#    |
+|--- |---| ---|
+|C# Compute **11.278s**   | VB Compute **33.883s** | F# Compute **197.781 s** |
+| C# allocated 8,320 bytes  | VB allocated 8,344 bytes  | F# allocated 23,075,832 bytes  |
+|  Draw took 1.712s  |   Draw took 1.763s |  Draw Took 1.690s |
+| 3.3% slower than 5.2  | 20.7% slower than 5.2 | 11.1% slower than 5.2 |
+| 27.6% slower than 3.11  | 0.7% slower than 3.11 | 13.4% faster than 3.11 |
+
+Bitmap drawing is now faster than ever
+
+Memory usage is reduced by about 1.1 Megabytes for each language
+
+All languages are slower than with 5.2. Only F# is faster than with 3.11 (VB is almost the same)
 
 # Use standard wiring for Meadow F7 and LCD
 ![Meadow Frizing](/Meadowbrot/st7789_fritzing.jpg)
