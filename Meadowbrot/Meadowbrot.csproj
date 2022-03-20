@@ -6,11 +6,11 @@
 		<AssemblyName>App</AssemblyName>
 	</PropertyGroup>
 	<ItemGroup>
-		<PackageReference Include="Meadow.F7" Version="0.28.0" />
-		<PackageReference Include="Meadow.Foundation" Version="0.30.0" />
+		<PackageReference Include="Meadow.F7" Version="0.30.1" />
+		<PackageReference Include="Meadow.Foundation" Version="0.32.2" />
 	</ItemGroup>
 	<ItemGroup>
-		<PackageReference Include="Meadow.Foundation.Displays.TftSpi" Version="0.7.49" />
+		<PackageReference Include="Meadow.Foundation.Displays.TftSpi" Version="0.7.52" />
 	</ItemGroup>
 	<ItemGroup>
 		<ProjectReference Include="..\MandelbrotF\MandelbrotF.fsproj" />

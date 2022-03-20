@@ -6,10 +6,10 @@ namespace Meadow.Foundation.MyExtensions
 {
 
     // Extend the GraphicsLibrary 
-    public class GraphicsLibraryEx : GraphicsLibrary
+    public class GraphicsLibraryEx : MicroGraphics
     {
-        DisplayBase display;
-        public GraphicsLibraryEx(DisplayBase display) : base(display)
+        private readonly IGraphicsDisplay display;
+        public GraphicsLibraryEx(IGraphicsDisplay display) : base(display)
         {
             this.display = display;
         }
@@ -19,7 +19,7 @@ namespace Meadow.Foundation.MyExtensions
             if (clear)
                 Clear(true);
 
-            ScaleFactor big = GraphicsLibrary.ScaleFactor.X3;
+            ScaleFactor big = ScaleFactor.X3;
             DrawText(((int)display.Width - CurrentFont.Width * text.Length * (int)big) / 2,
                       ((int)display.Height - CurrentFont.Height * (int)big) / 2,
                       text, color, big);
