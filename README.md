@@ -102,6 +102,18 @@ Memory usage is reduced by about 1.1 Megabytes for each language
 
 All languages are slower than with 5.2. Only F# is faster than with 3.11 (VB is almost the same)
 
+### Update 6.3 
+ C#      | VB      | F#    |
+|--- |---| ---|
+|C# Compute **9.658 s**   | VB Compute **29.536 s** | F# Compute **fail** |
+| C# allocated 9,688 bytes  | VB allocated 8,504 bytes  | F# threw FileNotFoundException  |
+|  Draw took 1.509s  |   Draw took 1.548s |   |
+| 14.6% faster than 6.0  | 12.8% faster than 6.0 |  |
+
+Draw times are 12% faster than 6.0
+
+The Fsharp.Core.dll is too big to fit on the V1 meadow boards. It fails to deploy (getting stuck at 90%) and then is not available at run time.
+
 # Use standard wiring for Meadow F7 and LCD
 ![Meadow Frizing](/Meadowbrot/st7789_fritzing.jpg)
 
