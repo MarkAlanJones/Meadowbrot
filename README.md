@@ -19,9 +19,9 @@ I left the C# inside the main executable for this reason.
 Timings are written to the console by each language. F# uses printfn for this.
 F# in particular includes a large runtime, that is slow to deploy the first time.
 
-
-And now for the rather disappointing results...
 (Note I compiled in release mode, to maximize any of the inline optimizations)
+
+### Early results were disapointing, but keep scrolling to see the amazing improvement approaching Release 1.0
 
  C#      | VB      | F#    |
 |--- |---| ---|
