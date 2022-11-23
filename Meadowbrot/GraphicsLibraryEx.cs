@@ -8,7 +8,7 @@ namespace Meadow.Foundation.MyExtensions
     // Extend the GraphicsLibrary 
     public class GraphicsLibraryEx : MicroGraphics
     {
-        private readonly IGraphicsDisplay display;
+        private new readonly IGraphicsDisplay display;
         public GraphicsLibraryEx(IGraphicsDisplay display) : base(display)
         {
             this.display = display;

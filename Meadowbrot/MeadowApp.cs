@@ -1,13 +1,14 @@
 ﻿using Meadow;
 using Meadow.Devices;
 using Meadow.Foundation;
-using Meadow.Foundation.Displays.TftSpi;
+using Meadow.Foundation.Displays;
 using Meadow.Foundation.Graphics;
 using Meadow.Foundation.MyExtensions;
 using Meadow.Hardware;
 using System;
 using System.Diagnostics;
 using System.Threading;
+using System.Threading.Tasks;
 
 namespace Meadowbrot
 {
@@ -32,8 +33,8 @@ namespace Meadowbrot
     //LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
     //OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
     //SOFTWARE.
-    /// </summary>
-    public class MeadowApp : App<F7Micro, MeadowApp>
+    /// </summary>v
+    public class MeadowApp : App<F7FeatherV1>
     {
         St7789 display;
         GraphicsLibraryEx graphics;
@@ -83,7 +84,7 @@ namespace Meadowbrot
             }
         }
 
-        void Initialize()
+        public override Task Initialize()
         {
             Console.WriteLine("Initializing...");
 
@@ -96,10 +97,7 @@ namespace Meadowbrot
                 chipSelectPin: null,
                 dcPin: Device.Pins.D01,
                 resetPin: Device.Pins.D00,
-                width: displayWidth, height: displayHeight)
-            {
-                IgnoreOutOfBoundsPixels = true
-            };
+                width: displayWidth, height: displayHeight);
 
             // extended graphics library
             graphics = new GraphicsLibraryEx(display)
@@ -109,6 +107,7 @@ namespace Meadowbrot
             };
 
             graphics.Clear(true);
+            return base.Initialize();   
         }
 
         void Draw(byte[][] data)
