@@ -19,31 +19,9 @@ I left the C# inside the main executable for this reason.
 Timings are written to the console by each language. F# uses printfn for this.
 F# in particular includes a large runtime, that is slow to deploy the first time.
 
-Here are the deployed project files (3.11 deployment):
--  Deploying to Meadow on COM4...
--  Initializing Meadow                                                                                                     
--  Device  MeadowOS Version: 0.3.11 (May 22 2020 21:40:16)                                                                
--  Checking files on device (may take several seconds)  
--   Found System.dll                                                                                                        
--   Found System.Core.dll                                                                                                   
--   Found mscorlib.dll                                                                                                      
--   Found Meadow.dll                                                                                                        
--   Found App.exe                                                                                                           
--   Found Meadow.Foundation.dll                                                                                             
--   Found GraphicsLibrary.dll                                                                                               
--   Found TftSpi.dll                                                                                                       
--   Found FSharp.Core.dll                                                                                                
--   Found MandelbrotF.dll                                                                                                  
--   Found MandelbrotVB.dll                                                                                                  
--   Found System.Numerics.Vectors.dll                                                                                        
--   Found System.Runtime.CompilerServices.Unsafe.dll                                                                         
--  Writing App.exe                                                                                                         
--  Writing MandelbrotF.dll                                                                                                  
--  Resetting Meadow and starting app (30-60s)                                                                              
--  Deployment Duration: 00:00:19.1825112                                                                                   
-
-And now for the rather disappointing results...
 (Note I compiled in release mode, to maximize any of the inline optimizations)
+
+### Early results were disapointing, but keep scrolling to see the amazing improvement approaching Release 1.0
 
  C#      | VB      | F#    |
 |--- |---| ---|
@@ -113,6 +91,16 @@ All languages are slower than with 5.2. Only F# is faster than with 3.11 (VB is 
 Draw times are 12% faster than 6.0
 
 The Fsharp.Core.dll is too big to fit on the V1 meadow boards. It fails to deploy (getting stuck at 90%) and then is not available at run time.
+
+### Update RC1-1 JIT :collision:
+ C#      | VB      | F#    |
+|--- |---| ---|
+|C# Compute **0.906 s**   | VB Compute **1.16 s** | F# Compute **7.181 s** |
+| C# allocated 6,576 bytes  | VB allocated 6,592 bytes  | F# allocated 10,632 bytes  |
+|  Draw took 0.284s  |   Draw took 0.286s |  Draw Took 0.283s |
+| 11X Faster  | 25X Faster | 28X Faster |
+
+Drawing 5X Faster, Memory allocation is reasonable now.
 
 # Use standard wiring for Meadow F7 and LCD
 ![Meadow Frizing](/Meadowbrot/st7789_fritzing.jpg)
