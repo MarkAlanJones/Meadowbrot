@@ -45,13 +45,11 @@ namespace Meadowbrot
         Color displayColor;
         int loop = 1;
 
-        public MeadowApp()
+        public override Task Run()
         {
-            Initialize();
-
             // Generate a 240x240 Mandelbrot image in each of the languages
             // Timing is output to the console - The timing does not include the time to load the dlls.
-            while (true)
+            while (loop > 0)
             {
                 Console.WriteLine("--------------------------------------------------------------------------");
                 Console.WriteLine($"{loop++}) {DateTime.Now:T}");
@@ -82,6 +80,7 @@ namespace Meadowbrot
 
                 Console.WriteLine($"Total inuse memory {GC.GetTotalMemory(false):N0} bytes ");
             }
+            return base.Run();
         }
 
         public override Task Initialize()
@@ -107,7 +106,7 @@ namespace Meadowbrot
             };
 
             graphics.Clear(true);
-            return base.Initialize();   
+            return base.Initialize();
         }
 
         void Draw(byte[][] data)
