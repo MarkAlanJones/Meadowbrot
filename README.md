@@ -102,6 +102,12 @@ The Fsharp.Core.dll is too big to fit on the V1 meadow boards. It fails to deplo
 
 Drawing 5X Faster, Memory allocation is reasonable now.
 
+### Update RC2-2 
+ C#      | VB      | F# (7.0.200)   |
+|--- |---| ---|
+|C# Compute **0.906 s**   | VB Compute **1.161 s** | F# Compute **6.305 s** |
+| *Same*  | *Same*  | 12% Faster  |
+
 # Use standard wiring for Meadow F7 and LCD
 ![Meadow Frizing](/Meadowbrot/st7789_fritzing.jpg)
 
