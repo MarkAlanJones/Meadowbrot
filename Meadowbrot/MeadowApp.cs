@@ -91,7 +91,6 @@ namespace Meadowbrot
             var spiBus = Device.CreateSpiBus(Device.Pins.SCK, Device.Pins.MOSI, Device.Pins.MISO, config);
 
             display = new St7789(
-                device: Device,
                 spiBus: spiBus,
                 chipSelectPin: null,
                 dcPin: Device.Pins.D01,
@@ -101,7 +100,7 @@ namespace Meadowbrot
             // extended graphics library
             graphics = new GraphicsLibraryEx(display)
             {
-                Rotation = RotationType._270Degrees,
+                Rotation = RotationType._90Degrees,
                 CurrentFont = new Font12x20()
             };
 
