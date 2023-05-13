@@ -113,6 +113,7 @@ Drawing 5X Faster, Memory allocation is reasonable now.
 |--- |---| ---|
 |C# Compute **0.907 s**   | VB Compute **1.158 s** | F# Compute **6.378 s** |
 | *Same*  | 0.25% faster  | 1.16% slower  |
+
 Keeps running without crashing for much longer, but still a small memory leak somewhere
 
 # Use standard wiring for Meadow F7 and LCD
