@@ -18,7 +18,7 @@
     <None Include="LICENSE" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Meadow.Foundation" Version="1.1.1.8-beta" />
+    <PackageReference Include="Meadow.Foundation" Version="1.2.0" />
     <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="7.0.0-preview.2.22152.2" />
   </ItemGroup>
   <ItemGroup>
