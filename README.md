@@ -129,6 +129,13 @@ Keeps running without crashing for much longer, but still a small memory leak so
 |C# Compute **0.906 s**   | VB Compute **1.159 s** | F# Compute **6.366 s** |
 | *Same*  | *Same*   | 0.063% faster |
 
+
+### Update 1.2 _same_
+ C#      | VB  (10.4 pre)    | F# (8.0.1 beta)   |
+|--- |---| ---|
+|C# Compute **0.905 s**   | VB Compute **1.17 s** | F# Compute **6.369 s** |
+| *Same*  | *Same*   |  *Same*  |
+
 # Use standard wiring for Meadow F7 and LCD
 ![Meadow Frizing](/Meadowbrot/st7789_fritzing.jpg)
 
