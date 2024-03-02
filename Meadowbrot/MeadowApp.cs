@@ -5,6 +5,7 @@ using Meadow.Foundation.Displays;
 using Meadow.Foundation.Graphics;
 using Meadow.Foundation.MyExtensions;
 using Meadow.Hardware;
+using Meadow.Peripherals.Displays;
 using System;
 using System.Diagnostics;
 using System.Threading;

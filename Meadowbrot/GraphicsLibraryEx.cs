@@ -1,5 +1,6 @@
 ﻿using Meadow.Foundation.Displays;
 using Meadow.Foundation.Graphics;
+using Meadow.Peripherals.Displays;
 using System;
 
 namespace Meadow.Foundation.MyExtensions
@@ -8,8 +9,8 @@ namespace Meadow.Foundation.MyExtensions
     // Extend the GraphicsLibrary 
     public class GraphicsLibraryEx : MicroGraphics
     {
-        private new readonly IGraphicsDisplay display;
-        public GraphicsLibraryEx(IGraphicsDisplay display) : base(display)
+        private new readonly IPixelDisplay display;
+        public GraphicsLibraryEx(IPixelDisplay display) : base(display)
         {
             this.display = display;
         }
