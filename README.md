@@ -146,6 +146,17 @@ Keeps running without crashing for much longer, but still a small memory leak so
 
 Still seems to get stuck after 10 loops !
 
+### Update 1.11 _slower for F#_ 
+ C#      | VB      | F# (8.0.2)   |
+|--- |---| ---|
+|C# Compute **0.906 s**   | VB Compute **1.167 s** | F# Compute **7.337 s** |
+| C# allocated 6,088 bytes  | VB allocated 6,112 bytes  | F# allocated 10,152 bytes  |
+|  Draw took 0.18s  |   Draw took 0.183s |  Draw Took 0.179s |
+| *Same*  | *Same*   |  *9.6% Slower*  |
+
+Drawing is a bit faster accross the board
+Now after 10 loops it crashes and restarts automatically !
+
 # Use standard wiring for Meadow F7 and LCD
 ![Meadow Frizing](/Meadowbrot/st7789_fritzing.jpg)
 
