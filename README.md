@@ -163,7 +163,9 @@ Still seems to get stuck after 10 loops !
 | *Same*  | *Same*   |  *9.6% Slower*  |
 
 it ran through 30 loops before crashing
+
 F# 8.0.300 did not run but 8.0.200 is ok
+
 c# sometimes allocates 6088 and sometimes 6096 (e.g. +- 8 bytes)
 
 # Use standard wiring for Meadow F7 and LCD
