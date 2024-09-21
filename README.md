@@ -168,6 +168,14 @@ F# 8.0.300 did not run but 8.0.200 is ok
 
 c# sometimes allocates 6088 and sometimes 6096 (e.g. +- 8 bytes)
 
+### Update 1.14 slightly slower. slower draw. some crashing
+ C#      | VB      | F# (8.0.4)   |
+|--- |---| ---|
+|C# Compute **0.907 s**   | VB Compute **1.173 s** | F# Compute **7.809 s** |
+| C# allocated 6,096 bytes  | VB allocated 6,112 bytes  | F# allocated 10,152 bytes  |
+|  Draw took 0.215s  |   Draw took 0.217s |  Draw Took 0.2178s |
+| *19% slower draw*  | *18.6% slower draw*   |  *22% Slower draw* *6.5% slower compute* |
+
 # Use standard wiring for Meadow F7 and LCD
 ![Meadow Frizing](/Meadowbrot/st7789_fritzing.jpg)
 
