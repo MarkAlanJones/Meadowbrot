@@ -176,6 +176,13 @@ c# sometimes allocates 6088 and sometimes 6096 (e.g. +- 8 bytes)
 |  Draw took 0.215s  |   Draw took 0.217s |  Draw Took 0.2178s |
 | *19% slower draw*  | *18.6% slower draw*   |  *22% Slower draw* *6.5% slower compute* |
 
+### Update 2.0.1.2 is back to the speed of previous releases
+ C#      | VB      | F# (9.0.2)   |
+|--- |---| ---|
+|C# Compute **0.905 s**   | VB Compute **1.159 s** | F# Compute **7.806 s** |
+| C# allocated 6,096 bytes  | VB allocated 6,112 bytes  | F# allocated 10,152 bytes  |
+|  Draw took 0.181s  |   Draw took 0.183s |  Draw Took 0.179s |
+
 # Use standard wiring for Meadow F7 and LCD
 ![Meadow Frizing](/Meadowbrot/st7789_fritzing.jpg)
 
